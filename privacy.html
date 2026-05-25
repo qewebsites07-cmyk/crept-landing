@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Crept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a0e27;
+    --navy-mid: #0f1535;
+    --gold: #f5b800;
+    --white: #ffffff;
+    --muted: rgba(255,255,255,0.55);
+    --border: rgba(245,184,0,0.15);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--navy); color: var(--white); font-family: 'DM Sans', sans-serif; font-weight: 400; line-height: 1.7; }
+
+  nav {
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo-icon { width: 36px; height: 36px; background: var(--gold); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .nav-wordmark { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--white); }
+  .nav-wordmark span { color: var(--gold); }
+
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+
+  .updated {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gold);
+    margin: 40px 0 12px;
+  }
+
+  p { font-size: 15px; color: var(--muted); margin-bottom: 12px; }
+
+  ul { margin: 0 0 12px; padding-left: 1.5rem; }
+  ul li { font-size: 15px; color: var(--muted); margin-bottom: 6px; }
+  ul li strong { color: var(--white); font-weight: 500; }
+
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  footer {
+    padding: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer p { font-size: 13px; color: rgba(255,255,255,0.25); margin: 0; }
+  footer a { font-size: 13px; color: rgba(255,255,255,0.35); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <div class="nav-logo-icon">
+      <svg width="22" height="22" viewBox="0 0 44 44" fill="none">
+        <path d="M22 4 L40 11 L40 22 C40 33 31 40 22 42 C13 40 4 33 4 22 L4 11 Z" fill="#0a0e27"/>
+        <circle cx="22" cy="22" r="6" fill="none" stroke="#f5b800" stroke-width="2"/>
+        <line x1="22" y1="12" x2="22" y2="16" stroke="#f5b800" stroke-width="2" stroke-linecap="round"/>
+        <line x1="22" y1="28" x2="22" y2="32" stroke="#f5b800" stroke-width="2" stroke-linecap="round"/>
+        <line x1="12" y1="22" x2="16" y2="22" stroke="#f5b800" stroke-width="2" stroke-linecap="round"/>
+        <line x1="28" y1="22" x2="32" y2="22" stroke="#f5b800" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="nav-wordmark">crept<span>.</span></span>
+  </a>
+</nav>
+
+<div class="content">
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: 25 May 2026</p>
+
+  <p>Crept ("we", "us", "our") is operated by Joshua James Harte, based in Birmingham, United Kingdom. This policy explains how Crept handles your data when you use our Chrome extension and web services at crept.app.</p>
+
+  <h2>What data we collect</h2>
+  <p>Crept collects only the minimum data necessary to provide the service:</p>
+  <ul>
+    <li>Your Google account email address and name, used to identify your account</li>
+    <li>Project information you enter manually — client name, client email, deliverables, exclusions, rate, timeline, and payment terms</li>
+    <li>Scope agreements and change orders you create, stored securely in our database</li>
+    <li>The body text of the specific Gmail email you are currently viewing — only when you click the Analyze button or use the right-click "Analyze for Scope Creep" menu. This text is never stored.</li>
+  </ul>
+
+  <h2>What we do not collect</h2>
+  <ul>
+    <li>We do not read, scan, or monitor your inbox automatically</li>
+    <li>We do not access any email unless you explicitly click Analyze on that specific email</li>
+    <li>We do not store any email content — it is sent directly to OpenAI for analysis and immediately discarded</li>
+    <li>We do not sell, share, or monetise your data in any way</li>
+    <li>We do not track your browsing activity</li>
+  </ul>
+
+  <h2>How we use your data</h2>
+  <ul>
+    <li>Your account information is used to authenticate you and associate your projects with your account</li>
+    <li>Project data is stored in Supabase so you can access your scope agreements and change orders across sessions</li>
+    <li>Email body text is sent to OpenAI's API solely to analyse whether the email contains out-of-scope requests. It is not stored, logged, or used for any other purpose.</li>
+  </ul>
+
+  <h2>Third party services</h2>
+  <ul>
+    <li><strong>Supabase</strong> — stores your account and project data. Data is held in EU servers (eu-west-1). See <a href="https://supabase.com/privacy">supabase.com/privacy</a>.</li>
+    <li><strong>OpenAI</strong> — receives email body text for analysis only when you click Analyze. OpenAI does not retain this data for training under our API agreement. See <a href="https://openai.com/privacy">openai.com/privacy</a>.</li>
+    <li><strong>Resend</strong> — used to send transactional emails such as scope agreements and change orders. See <a href="https://resend.com/privacy">resend.com/privacy</a>.</li>
+    <li><strong>Vercel</strong> — hosts our backend API. See <a href="https://vercel.com/legal/privacy-policy">vercel.com/legal/privacy-policy</a>.</li>
+    <li><strong>Google Fonts</strong> — loaded on client-facing signing pages (fonts.googleapis.com) to display the signature font. See <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</li>
+  </ul>
+
+  <h2>Data retention</h2>
+  <p>Your account and project data is retained for as long as you have an active account. You may request deletion of your data at any time by contacting us at <a href="mailto:hello@crept.app">hello@crept.app</a>. Email content is never retained — it is discarded immediately after analysis.</p>
+
+  <h2>Your rights under UK GDPR</h2>
+  <p>As a UK resident or user, you have the right to access, correct, or delete your personal data. You also have the right to object to processing and to data portability. To exercise any of these rights, contact us at <a href="mailto:hello@crept.app">hello@crept.app</a>.</p>
+
+  <h2>Chrome extension permissions</h2>
+  <ul>
+    <li><strong>Read Gmail content</strong> — required to read the body of the email you are currently viewing when you click Analyze or use the right-click context menu. No emails are read automatically.</li>
+    <li><strong>Storage</strong> — used to store your authentication token and active project reference locally so you remain signed in between sessions. All project data is stored server-side in Supabase.</li>
+    <li><strong>Identity</strong> — used to authenticate you with your Google account via OAuth.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>For any privacy questions or data requests, contact Joshua James Harte at <a href="mailto:hello@crept.app">hello@crept.app</a>.</p>
+</div>
+
+<footer>
+  <p>© 2026 Crept. Built by Joshua Harte, Birmingham UK.</p>
+  <a href="/">← Back to home</a>
+</footer>
+
+</body>
+</html>
