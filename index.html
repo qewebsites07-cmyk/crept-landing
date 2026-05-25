@@ -680,18 +680,37 @@
 </footer>
 
 <script>
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const email = form.querySelector('input[type="email"]').value;
-  form.style.display = 'none';
-  const success = document.getElementById('success');
-  if (success) {
-    success.style.display = 'block';
-  } else {
-    form.insertAdjacentHTML('afterend', '<div class="success-msg" style="display:block">You\'re on the list. We\'ll be in touch soon.</div>');
+  const btn = form.querySelector('button');
+  btn.textContent = 'Joining...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://scopeguard-extension.vercel.app/api/join-waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      const success = document.getElementById('success');
+      if (success) {
+        success.style.display = 'block';
+      } else {
+        form.insertAdjacentHTML('afterend', '<div class="success-msg" style="display:block">You\'re on the list. We\'ll be in touch soon.</div>');
+      }
+    } else {
+      btn.textContent = 'Join waitlist';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again.');
+    }
+  } catch (err) {
+    btn.textContent = 'Join waitlist';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again.');
   }
-  console.log('Waitlist signup:', email);
 }
 </script>
 
