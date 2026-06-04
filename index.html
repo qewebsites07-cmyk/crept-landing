@@ -660,6 +660,38 @@ footer {
 }
 .foot-links a:hover { color: var(--gold); }
 
+/* ── INSTALL BUTTON ── */
+.install-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--gold); color: #08090f;
+  padding: 14px 24px; border-radius: 9px;
+  font-family: var(--sans); font-size: 15px; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+  box-shadow: 0 4px 24px rgba(245,184,0,0.25);
+}
+.install-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+
+/* ── PRESS BADGE ── */
+.press-badge {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: 24px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: fit-content;
+}
+.press-badge:hover { border-color: rgba(245,184,0,0.35); background: rgba(245,184,0,0.04); }
+.press-label {
+  font-size: 11px; color: var(--t3); font-weight: 400; letter-spacing: 0.3px;
+}
+.press-name {
+  font-size: 13px; font-weight: 600; color: var(--gold); letter-spacing: -0.2px;
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
@@ -747,7 +779,7 @@ footer {
     <a class="nav-link" href="#why">Why Crept</a>
     <a class="nav-link" href="#pricing">Pricing</a>
   </div>
-  <a class="nav-cta" href="#">Get started</a>
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/crept/aakkkibdpombnomcpekojagnmdgdfbfh" target="_blank">Add to your browser — it's free</a>
 </nav>
 
 <!-- HERO -->
@@ -763,14 +795,17 @@ footer {
     <p class="hero-sub">Crept detects scope creep in client emails the moment it happens — inside Gmail. No app switching. No copy-pasting. Just a verdict and a change order, ready to send.</p>
 
     <div class="form-wrap">
-      <p class="form-label">Get early access</p>
-      <form class="hero-form" id="hero-form" onsubmit="handleSubmit(event,'hero-success')">
-        <input type="email" placeholder="your@email.com" required />
-        <button type="submit">Join waitlist</button>
-      </form>
-      <div class="success-msg" id="hero-success"></div>
+      <a class="install-btn" href="https://chromewebstore.google.com/detail/crept/aakkkibdpombnomcpekojagnmdgdfbfh" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Add to your browser — it's free
+      </a>
       <p class="form-note">Free to start &nbsp;·&nbsp; 8 analyses/month &nbsp;·&nbsp; No credit card</p>
     </div>
+
+    <a class="press-badge" href="https://startupfortune.com/crept-catches-scope-creep-inside-gmail-before-the-freelancer-has-already-lost-the-money/" target="_blank">
+      <span class="press-label">As featured in</span>
+      <span class="press-name">Startup Fortune →</span>
+    </a>
   </div>
 
   <div class="hero-right">
@@ -786,10 +821,10 @@ footer {
 
       <div class="w-body">
         <div class="email-row">
-          <div class="email-avatar">SC</div>
+          <div class="email-avatar">RP</div>
           <div class="email-meta">
-            <div class="email-name">Sarah Chen</div>
-            <div class="email-sub">sarah@designco.io</div>
+            <div class="email-name">Raaj Penn</div>
+            <div class="email-sub">raaj@designco.io</div>
           </div>
           <div class="email-time">2:14 PM</div>
         </div>
@@ -862,7 +897,7 @@ footer {
     <div class="step">
       <div class="step-num">01 &nbsp; Before the project</div>
       <h3>Define your scope</h3>
-      <p>Set deliverables, exclusions, rate, timeline and payment terms. Send your client a scope agreement to sign digitally. Both parties receive a signed copy by email automatically.</p>
+      <p>Set deliverables, rate, timeline and payment terms. Send your client a scope agreement to sign digitally. Both parties receive a signed copy by email automatically.</p>
     </div>
     <div class="step">
       <div class="step-num">02 &nbsp; During the project</div>
@@ -944,7 +979,7 @@ footer {
         <li><span class="check">✓</span>Client digital signing</li>
         <li><span class="check">✓</span>Signed copies by email</li>
       </ul>
-      <a class="pc-btn pc-btn-ghost" href="#">Get started free</a>
+      <a class="pc-btn pc-btn-ghost" href="https://chromewebstore.google.com/detail/crept/aakkkibdpombnomcpekojagnmdgdfbfh" target="_blank">Get started free</a>
     </div>
     <div class="price-card featured">
       <div class="pc-badge">Most popular</div>
@@ -960,7 +995,7 @@ footer {
         <li><span class="check">✓</span>Signed copies by email</li>
         <li><span class="check">✓</span>Priority support</li>
       </ul>
-      <a class="pc-btn pc-btn-solid" href="#">Start with Premium</a>
+      <a class="pc-btn pc-btn-solid" href="https://chromewebstore.google.com/detail/crept/aakkkibdpombnomcpekojagnmdgdfbfh" target="_blank">Start with Premium</a>
     </div>
   </div>
 </section>
@@ -970,15 +1005,13 @@ footer {
   <div class="cta-inner">
     <div class="cta-left reveal">
       <h2>Stop working<br><em>for free.</em></h2>
-      <p>Join the waitlist. Be first when we open the doors.</p>
+      <p>Install Crept in seconds. Free to start, no card needed.</p>
     </div>
     <div class="cta-right reveal d1">
-      <p class="form-label">Your email address</p>
-      <form class="cta-form" onsubmit="handleSubmit(event,'cta-success')">
-        <input type="email" placeholder="your@email.com" required />
-        <button type="submit">Join waitlist</button>
-      </form>
-      <div class="success-msg" id="cta-success" style="max-width:380px;margin-top:10px"></div>
+      <a class="install-btn" href="https://chromewebstore.google.com/detail/crept/aakkkibdpombnomcpekojagnmdgdfbfh" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Add to your browser — it's free
+      </a>
       <p class="cta-note">Free to start &nbsp;·&nbsp; 8 analyses/month &nbsp;·&nbsp; No credit card</p>
     </div>
   </div>
