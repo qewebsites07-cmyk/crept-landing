@@ -660,6 +660,104 @@ footer {
 }
 .foot-links a:hover { color: var(--gold); }
 
+/* ── VERDICT GRID ── */
+.verdict-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+}
+.verdict-tile {
+  border-radius: 12px; padding: 32px 28px;
+  border: 1px solid;
+  transition: transform 0.2s;
+}
+.verdict-tile:hover { transform: translateY(-3px); }
+.red-tile   { background: rgba(239,68,68,0.06);   border-color: rgba(239,68,68,0.2); }
+.amber-tile { background: rgba(245,158,11,0.06);  border-color: rgba(245,158,11,0.2); }
+.green-tile { background: rgba(34,197,94,0.06);   border-color: rgba(34,197,94,0.2); }
+.vt-dot {
+  width: 10px; height: 10px; border-radius: 50%; margin-bottom: 16px;
+  box-shadow: 0 0 12px;
+}
+.red-dot   { background: var(--red);   box-shadow: 0 0 12px rgba(239,68,68,0.6); animation: vpulse 1.4s ease-in-out infinite; }
+.amber-dot { background: var(--amber); box-shadow: 0 0 12px rgba(245,158,11,0.5); animation: vpulse 1.4s 0.4s ease-in-out infinite; }
+.green-dot { background: var(--green); box-shadow: 0 0 12px rgba(34,197,94,0.5);  animation: vpulse 1.4s 0.8s ease-in-out infinite; }
+.vt-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.red-tile   .vt-label { color: var(--red); }
+.amber-tile .vt-label { color: var(--amber); }
+.green-tile .vt-label { color: var(--green); }
+.vt-title {
+  font-size: 20px; font-weight: 600; letter-spacing: -0.5px;
+  color: var(--white); margin-bottom: 10px;
+}
+.vt-desc { font-size: 14px; color: var(--t2); line-height: 1.75; font-weight: 300; }
+
+/* ── TESTIMONIALS ── */
+.testi-outer {
+  position: relative; z-index: 1;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 100px 0;
+}
+.testi-inner { max-width: 1200px; margin: 0 auto; padding: 0 80px; }
+.testi-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 16px;
+}
+.testi-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px; padding: 28px;
+  position: relative;
+  transition: border-color 0.2s;
+}
+.testi-card:hover { border-color: var(--border2); }
+.testi-stars { color: var(--gold); font-size: 13px; margin-bottom: 14px; letter-spacing: 2px; }
+.testi-quote {
+  font-size: 14px; color: var(--t2); line-height: 1.8;
+  font-weight: 300; margin-bottom: 20px;
+  font-style: italic;
+}
+.testi-author { display: flex; align-items: center; gap: 10px; }
+.testi-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; color: #fff; flex-shrink: 0;
+}
+.testi-name { font-size: 13px; font-weight: 600; color: var(--t1); }
+.testi-role { font-size: 11px; color: var(--t3); margin-top: 1px; }
+
+/* ── FAQ ── */
+.faq-list { max-width: 700px; }
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 0; gap: 16px;
+  font-family: var(--sans); font-size: 15px; font-weight: 500;
+  color: var(--t1); text-align: left;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--gold); }
+.faq-arrow {
+  font-size: 16px; color: var(--t3); flex-shrink: 0;
+  transition: transform 0.25s, color 0.2s;
+  display: inline-block;
+}
+.faq-q.open .faq-arrow { transform: rotate(180deg); color: var(--gold); }
+.faq-q.open { color: var(--gold); }
+.faq-a {
+  font-size: 14px; color: var(--t2); line-height: 1.8; font-weight: 300;
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.25s ease;
+  padding-bottom: 0;
+}
+.faq-a.open { max-height: 200px; padding-bottom: 20px; }
+
 /* ── INSTALL BUTTON ── */
 .install-btn {
   display: inline-flex; align-items: center; gap: 10px;
@@ -748,6 +846,12 @@ footer {
   .proof { padding: 20px; gap: 16px; justify-content: flex-start; flex-direction: column; align-items: flex-start; }
 
   footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; gap: 12px; }
+
+  .verdict-grid { grid-template-columns: 1fr; gap: 12px; }
+  .testi-outer { padding: 64px 0; }
+  .testi-inner { padding: 0 20px; }
+  .testi-grid { grid-template-columns: 1fr; gap: 12px; }
+  .faq-list { max-width: 100%; }
 
   nav { padding: 0 20px; }
   .nav-links { display: none; }
@@ -1000,6 +1104,85 @@ footer {
   </div>
 </section>
 
+<!-- VERDICT EXPLAINER -->
+<section class="section" id="verdict">
+  <p class="section-eyebrow reveal">The verdict system</p>
+  <h2 class="section-h2 reveal d1">You get a clear answer,<br><em>every time.</em></h2>
+  <p class="section-sub reveal d2">No grey areas. No second-guessing. Crept gives you one of three verdicts the moment you click Analyze.</p>
+
+  <div class="verdict-grid reveal d3">
+    <div class="verdict-tile red-tile">
+      <div class="vt-dot red-dot"></div>
+      <div class="vt-label">RED</div>
+      <div class="vt-title">Scope creep</div>
+      <p class="vt-desc">The request is clearly outside your signed scope. Send a change order before doing any work.</p>
+    </div>
+    <div class="verdict-tile amber-tile">
+      <div class="vt-dot amber-dot"></div>
+      <div class="vt-label">YELLOW</div>
+      <div class="vt-title">Borderline</div>
+      <p class="vt-desc">The request is ambiguous — it might be covered, it might not. Worth a conversation before proceeding.</p>
+    </div>
+    <div class="verdict-tile green-tile">
+      <div class="vt-dot green-dot"></div>
+      <div class="vt-label">GREEN</div>
+      <div class="vt-title">In scope</div>
+      <p class="vt-desc">The request is covered by your signed scope. Carry on — no action needed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <p class="section-eyebrow reveal">FAQ</p>
+  <h2 class="section-h2 reveal d1">Common <em>questions.</em></h2>
+
+  <div class="faq-list reveal d2">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Does Crept read all my emails?
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a">No. Crept only reads the specific email you click Analyze on. It doesn't connect to your Gmail account, scan your inbox, or store anything. The email content goes to AI for analysis and is immediately discarded.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Does my client need to create an account to sign?
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a">No. Your client receives an email with a link. They review and sign with one click — no account, no app, no friction. The simpler it is for them, the faster you get a decision.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What browsers does Crept work in?
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a">Crept is a Chrome extension and works in any Chromium-based browser — Chrome, Brave, Edge, and Arc. It injects directly into Gmail so everything happens in your existing inbox.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Is it really free to start?
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a">Yes. The free plan gives you 8 scope creep analyses per month, plus unlimited projects, scope agreements, change orders, and client signing. No card required. Upgrade to Premium (£20/month) for unlimited analyses.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Are the signed agreements legally binding?
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a">Digital signatures are legally recognised in the UK under the Electronic Communications Act 2000 and in the EU under eIDAS. Both parties receive a signed copy by email, creating a clear paper trail. We recommend consulting a solicitor for high-value contracts.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What happens to my data?
+        <span class="faq-arrow">↓</span>
+      </button>
+      <div class="faq-a">Email content is never stored — it's sent to AI for analysis and immediately discarded. Your scope agreements and change orders are stored securely and only accessible to you and your client. Crept is UK GDPR compliant and NDA-safe.</div>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <div class="cta-strip">
   <div class="cta-inner">
@@ -1088,6 +1271,13 @@ footer {
   }
   draw();
 })();
+
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(b => { b.classList.remove('open'); b.nextElementSibling.classList.remove('open'); });
+  if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
+}
 
 async function handleSubmit(e, sid) {
   e.preventDefault();
